@@ -11,10 +11,11 @@ namespace R5T.S0059
 
             // No initial blank line.
             var systemEnvironmentMachineNamePropertyName = "System.Environment.MachineName";
-            writer.WriteLine($"{Values.Instance.ProgramName}: Script providing the machine name as .NET would see it, using the {systemEnvironmentMachineNamePropertyName} value.");
+
+            writer.WriteLine($"{Instances.Values.ProgramName}: Script providing the machine name as .NET would see it, using the {systemEnvironmentMachineNamePropertyName} value.");
             writer.WriteLine();
 
-            var machineName = F0000.MachineNameOperator.Instance.GetMachineName();
+            var machineName = Instances.MachineNameOperator.GetMachineName();
 
             writer.WriteLine();
             writer.WriteLine($"Machine name: {machineName}");
